@@ -207,21 +207,22 @@ function validateupdateprofileform($form_data,$image_data)
         $response['status']=false;
         $response['field']='username';
     }
-    if($image_data['name']){
+    if ($image_data['name']) {
         $image = basename($image_data['name']);
-        $type = strtolower(pathinfo($image,PATHINFO_EXTENSION));
-        $size = $image_data['size']/1000;
-        if($type!='jpg'&& $type!='jpeg' && type!='png'){
-            $response['msg']="only jpg,jpeg,png images are allowed";
-            $response['status']=false;
-            $response['field']='profile_pic';
+        $type = strtolower(pathinfo($image, PATHINFO_EXTENSION));
+        $size = $image_data['size'] / 1000;
+        if ($type != 'jpg' && $type != 'jpeg' && $type != 'png') { // Corrected typo here: 'type' instead of type
+            $response['msg'] = "only jpg, jpeg, png images are allowed";
+            $response['status'] = false;
+            $response['field'] = 'profile_pic';
         }
-        if($size>1000){
-            $response['msg']="upload image less than 1mb";
-            $response['status']=false;
-            $response['field']='profile_pic';
+        if ($size > 1000) {
+            $response['msg'] = "upload image less than 1mb";
+            $response['status'] = false;
+            $response['field'] = 'profile_pic';
         }
     }
+    
     
     return $response;
 }

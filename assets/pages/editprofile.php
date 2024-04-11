@@ -1,16 +1,19 @@
 <?php global $user;?>
     <div class="container col-9 rounded-0 d-flex justify-content-between">
         <div class="col-12 bg-white border rounded p-4 mt-4 shadow-sm">
-            <form method="post" action="assets/php/actions.php?updateprofile" enctype="mutltipart/form-data">
+            <!-- Ensure enctype is set to "multipart/form-data" for file uploads -->
+            <form method="post" action="assets/php/actions.php?updateprofile" enctype="multipart/form-data">
                 <div class="d-flex justify-content-center">
 
 
                 </div>
                 <h1 class="h5 mb-3 fw-normal">Edit Profile</h1>
                 <div class="form-floating mt-1 col-6">
+                    <!-- Display current profile picture -->
                     <img src="assets/images/profile/<?=$user['profile_pic']?>" class="img-thumbnail my-3" style="height:150px;" alt="...">
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Change Profile Picture</label>
+                        <!-- Ensure name attribute is set correctly for file input -->
                         <input class="form-control" type="file" name="profile_pic" id="formFile">
                     </div>
                 </div>

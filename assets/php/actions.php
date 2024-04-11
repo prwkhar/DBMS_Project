@@ -44,7 +44,8 @@ if(isset($_GET['login'])){
   if(isset($_GET['updateprofile'])){
    echo "<pre>";
    print_r($_POST);
-   //$response=validateupdateprofileform($_POST,$_FILES['profile_pic']);
+   print_r($_FILES);
+   $response=validateupdateprofileform($_POST,$_FILES['profile_pic']);
    //print_r($response);
 //  if($response['status']){
 //    if(createUser($_POST)){
